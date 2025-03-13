@@ -7,6 +7,8 @@ require_once 'sistema/configuracao.php';
 include_once 'helpers.php';
 include './sistema/Nucleo/Mensagem.php';
 
+use sistema\Nucleo\Mensagem;
+
 // $msg = new Mensagem();
 
 // echo $msg->sucesso('mensagem de sucesso')->renderizar();

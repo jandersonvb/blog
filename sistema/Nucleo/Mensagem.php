@@ -1,4 +1,5 @@
 <?php
+namespace Sistema\Nucleo;
 
 class Mensagem
 {

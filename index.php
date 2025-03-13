@@ -7,10 +7,12 @@ require_once 'sistema/configuracao.php';
 include_once 'helpers.php';
 include './sistema/Nucleo/Mensagem.php';
 
-$msg = new Mensagem();
+// $msg = new Mensagem();
 
-echo $msg->sucesso('mensagem de sucesso')->renderizar();
-echo $msg->erro('mensagem de erro')->renderizar();
-echo $msg->alerta('mensagem de alerta')->renderizar();
-echo $msg->info('mensagem de informação')->renderizar();
+// echo $msg->sucesso('mensagem de sucesso')->renderizar();
+
+// echo (new Mensagem())->sucesso('mensagem de sucesso')->renderizar();
+
+echo (new Mensagem())->sucesso('mensagem de sucesso')
+                  
 ?>

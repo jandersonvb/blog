@@ -4,8 +4,8 @@
 require_once 'sistema/configuracao.php';
 include_once 'helpers.php';
 
-var_dump(localhost());
-echo '<hr>';
-echo url('admin');
+$cpf = '102.233.766-12';
+var_dump(validarCPF($cpf));
+
 
 ?>

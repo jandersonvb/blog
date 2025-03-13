@@ -1,5 +1,89 @@
 <?php
 
+/**
+ * Função para validar CPF
+ * 
+ * @param string $cpf
+ * @return bool
+ */
+
+function validarCPF(string $cpf): bool
+{ 
+  $cpf = limparNumero($cpf);
+  if (mb_strlen($cpf) != 11 || preg_match('/(\d)\1{10}/', $cpf)) {
+    return false;
+  }
+
+  for ($t = 9; $t < 11; $t++) {
+    for ($d = 0, $c = 0; $c < $t; $c++) {
+      $d += $cpf[$c] * (($t + 1) - $c);
+    }
+
+    $d = ((10 * $d) % 11) % 10;
+
+    if ($cpf[$c] != $d) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function limparNumero(string $numero): string
+{
+  return preg_replace('/[^0-9]/', '', $numero);
+}
+
+
+function slug(string $string): string
+{
+  return $string;
+}
+
+
+/**
+ * Função para exibir a data atual
+ * 
+ * @return string
+ */
+
+function dataAtual(): string
+{
+  $diaMes = date('d');
+  $diaSemana = date('w');
+  $mes = date('n') - 1;
+  $ano = date('Y');
+
+  $nomesDiasDaSemana = [
+    'Domingo',
+    'Segunda-feira',
+    'Terça-feira',
+    'Quarta-feira',
+    'Quinta-feira',
+    'Sexta-feira',
+    'Sábado'
+  ];
+
+  $nomesDiasDoMes = [
+    'Janeiro',
+    'Fevereiro',
+    'Março',
+    'Abril',
+    'Maio',
+    'Junho',
+    'Julho',
+    'Agosto',
+    'Setembro',
+    'Outubro',
+    'Novembro',
+    'Dezembro'
+  ];
+
+  return $nomesDiasDaSemana[$diaSemana] . ', ' . $diaMes . ' de ' . $nomesDiasDoMes[$mes] . ' de ' . $ano;
+}
+
+
+
 /** Funçao de url de acordo com o ambiente
  *  @param string $url
  *  @return string
@@ -149,15 +233,37 @@ function saudacao(): string
 {
   $hora = date('H');
 
-  if ($hora >= 0 && $hora <= 5) {
-    $saudacao = "Boa madrugada!";
-  } elseif ($hora >= 6 && $hora <= 12) {
-    $saudacao = "Bom dia!";
-  } elseif ($hora >= 13 && $hora <= 18) {
-    $saudacao = "Boa tarde!";
-  } else {
-    $saudacao = "Boa noite!";
-  }
+  // if ($hora >= 0 && $hora <= 5) {
+  //   $saudacao = "Boa madrugada!";
+  // } elseif ($hora >= 6 && $hora <= 12) {
+  //   $saudacao = "Bom dia!";
+  // } elseif ($hora >= 13 && $hora <= 18) {
+  //   $saudacao = "Boa tarde!";
+  // } else {
+  //   $saudacao = "Boa noite!";
+  // }
+
+  // switch ($hora) {
+  //   case ($hora >= 0 && $hora <= 5):
+  //     $saudacao = "Boa madrugada!";
+  //     break;
+  //   case ($hora >= 6 && $hora <= 12):
+  //     $saudacao = "Bom dia!";
+  //     break;
+  //   case ($hora >= 13 && $hora <= 18):
+  //     $saudacao = "Boa tarde!";
+  //     break;
+  //   default:
+  //     $saudacao = "Boa noite!";
+  // }
+
+  $saudacao = match ($hora) {
+    ($hora >= 0 && $hora <= 5) => "Boa madrugada!",
+    ($hora >= 6 && $hora <= 12) => "Bom dia!",
+    ($hora >= 13 && $hora <= 18) => "Boa tarde!",
+    default => "Boa noite!"
+  };
+
   return $saudacao;
 }
 

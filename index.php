@@ -4,18 +4,11 @@
 require_once 'sistema/configuracao.php';
 include_once 'sistema/Nucleo/helpers.php';
 include './sistema/Nucleo/Mensagem.php';
+include './sistema/Nucleo/Controlador.php';
 
-use sistema\Nucleo\Helpers;
+use sistema\Nucleo\Controlador;
 
-// $msg = new Mensagem();
+$controlador = new Controlador('Tema');
 
-// echo $msg->sucesso('mensagem de sucesso')->renderizar();
 
-// echo (new Mensagem())->sucesso('mensagem de sucesso')->renderizar();
-
-// echo (new Mensagem())->sucesso('texto de alerta');
-// $helper = new Helpers();
-// echo $helper->saudacao();
-
-echo Helpers::saudacao();
 ?>

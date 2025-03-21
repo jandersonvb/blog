@@ -19,6 +19,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=7.3",
-        "pecee/simple-router": "dev-master"        
+        "pecee/simple-router": "dev-master",
+        "twig/twig": "4.x-dev"        
     }
 }

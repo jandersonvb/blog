@@ -1,14 +1,6 @@
 <?php
 
-//declare(strict_types=1);
-require_once 'sistema/configuracao.php';
-include_once 'sistema/Nucleo/helpers.php';
-include './sistema/Nucleo/Mensagem.php';
-include './sistema/Nucleo/Controlador.php';
+//Arquivo de autoload do composer
+require 'vendor/autoload.php';
 
-use sistema\Nucleo\Controlador;
-
-$controlador = new Controlador('Tema');
-
-
-?>
+require 'rotas.php';

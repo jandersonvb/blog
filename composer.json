@@ -1,0 +1,24 @@
+{
+    "name": "janderson/blog",
+    "description": "Curso de PHP 8",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "sistema\\": "sistema/"
+        },
+        "files": [
+            "sistema/configuracao.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Janderson Vilas Boas",
+            "email": "jandersonvb.dev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.3",
+        "pecee/simple-router": "dev-master"        
+    }
+}

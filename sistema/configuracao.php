@@ -12,4 +12,6 @@ define('SITE_DESCRICAO', 'Descrição do meu site');
 define('URL_PRODUCAO', 'http://exemplosite.com.br');
 define('URL_DESENVOLVIMENTO', 'http://localhost/blog');
 
+define('URL_SITE', 'blog/');
+
 ?>

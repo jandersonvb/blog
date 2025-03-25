@@ -92,7 +92,7 @@ class Helpers
    *  @param string $url
    *  @return string
    */
-  public static function url(string $url): string
+  public static function url(string $url = null): string
   {
     $servidor = filter_input(INPUT_SERVER, 'SERVER_NAME');
     $ambiente = $servidor == 'localhost' ? URL_DESENVOLVIMENTO : URL_PRODUCAO;

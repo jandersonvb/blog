@@ -16,13 +16,17 @@ class SiteController extends Controlador
   public function index(): void
   {
     echo $this->template->renderizar('index.html', [
-      'titulo' => 'Hello, PHP!',
+      'titulo' => 'Teste de titulo',
       'conteudo' => 'Bem-vindo ao nosso site!'
     ]);
   }
 
   public function sobre(): void
   {
-    echo "Sobre nós";
+    echo $this->template->renderizar('about.html', [
+      'titulo' => 'Sobre nós',
+      'conteudo' => 'Conheça mais sobre nossa empresa!'
+    ]);
   }
+ 
 }

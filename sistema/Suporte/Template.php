@@ -1,9 +1,9 @@
 <?php
 
-namespace sistema\Suporte;
-use Twig\Lexer;
+namespace sistema\Suporte; // Define o namespace do arquivo
+use Twig\Lexer; // Importa a classe Lexer
 
-use sistema\Nucleo\Helpers;
+use sistema\Nucleo\Helpers; // Importa a classe Helpers
 
 
 //Class template de suporte para renderizar views com o Twig
@@ -13,14 +13,15 @@ class Template
 
     public function __construct(string $diretorio) // Construtor da classe
     {
-        $loader = new \Twig\Loader\FilesystemLoader($diretorio); // Cria um carregador de arquivos do Twig);
+        $loader = new \Twig\Loader\FilesystemLoader($diretorio); // Cria um carregador de arquivos do Twig
+
         $this->twig = new \Twig\Environment($loader); // Cria uma instância do ambiente Twig
 
-        $lexer = new Lexer($this->twig, [
+        $lexer = new Lexer($this->twig, [ // Cria um lexer para o ambiente Twig
             $this->helpers()
         ]);
 
-        $this->twig->setLexer($lexer);
+        $this->twig->setLexer($lexer); // Seta o lexer no ambiente Twig
     }
 
     // Método para renderizar uma view
@@ -37,6 +38,9 @@ class Template
             })),
             $this->twig->addFunction(new \Twig\TwigFunction("saudacao", function () {
                 return Helpers::saudacao();
+            })),
+            $this->twig->addFunction(new \Twig\TwigFunction("resumirTexto", function (string $texto, int $limite) {
+                return Helpers::resumirTexto($texto, $limite);
             })),
 
         ];

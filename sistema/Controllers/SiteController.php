@@ -16,7 +16,6 @@ class SiteController extends Controlador
   public function index(): void
   {
     echo $this->template->renderizar('index.html', [
-      'titulo' => 'Teste de titulo',
       'conteudo' => 'Bem-vindo ao nosso site!'
     ]);
   }

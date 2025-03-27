@@ -10,7 +10,13 @@
   <link rel="stylesheet" href="{{ url('templates/assets/css/styles.css') }}">
   <link rel="stylesheet" href="{{ url('templates/site/assets/css/styles.css') }}">
 
-  <title>Blog - </title>
+  <title>
+    {% if titulo %}
+    {{titulo}}
+    {% else %}
+    {{constant('SITE_NOME')}}
+    {% endif %}
+  </title>
 </head>
 
 <body>

@@ -5,7 +5,7 @@
 date_default_timezone_set('America/Sao_Paulo');
 
 //Informações do sistema   
-define('SITE_NOME', 'Meu site');
+define('SITE_NOME', 'Blog do Janderson');
 define('SITE_DESCRICAO', 'Descrição do meu site');
 
 //Urls do sistema

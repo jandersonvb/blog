@@ -6,7 +6,7 @@ use sistema\Nucleo\Controlador;
 
 // SiteController é uma classe que estende a classe Controlador
 class SiteController extends Controlador
-{ 
+{
   // Construtor da classe SiteController
   public function __construct()
   {
@@ -28,5 +28,4 @@ class SiteController extends Controlador
       'conteudo' => 'Conheça mais sobre nossa empresa!'
     ]);
   }
- 
 }
